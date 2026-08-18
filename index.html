@@ -327,7 +327,7 @@ const Q = [
 
 const CAL={mu:[0.6012,0.3943,0.4134,0.3603,0.5257,0.4526,0.5283,0.4603,0.3562,0.4755,0.6419,0.5671,0.5783,0.4761,0.2996,0.4487,0.3503,0.5117,0.3597,0.5767,0.4437,0.5135,0.4761,0.5556,0.5346,0.6012,0.4582,0.2929,0.4203,0.5765,0.5346,0.4995,0.4939,0.3851,0.5346,0.4582,0.5254,0.3809,0.4852,0.6019,0.6061],
  sd:[0.1879,0.1901,0.189,0.185,0.1778,0.1775,0.1648,0.1797,0.1777,0.1813,0.1746,0.176,0.1694,0.1984,0.1628,0.2041,0.1929,0.1657,0.1487,0.1798,0.2162,0.2097,0.1984,0.1822,0.1873,0.1879,0.1859,0.1721,0.1876,0.1942,0.1873,0.199,0.2119,0.2115,0.1873,0.1859,0.1685,0.1615,0.2119,0.1776,0.1911],
- off:[0.242, -0.026, -0.05, -0.123, 0.145, -0.006, 0.058, 0.016, -0.14, -0.142, 0.187, 0.21, 0.156, 0.207, -0.086, -0.25, -0.179, 0.13, 0.026, 0.246, -0.218, 0.23, 0.211, 0.178, 0.208, 0.242, 0.227, -0.163, -0.118, 0.209, 0.216, 0.259, -0.136, -0.128, 0.219, 0.247, 0.21, 0.069, -0.176, 0.075, -0.004]};
+ off:[0.165, 0.009, -0.044, -0.077, 0.147, 0.025, 0.082, 0.061, -0.062, -0.048, 0.192, 0.167, 0.168, 0.167, -0.02, -0.113, -0.048, 0.141, 0.057, 0.185, -0.108, 0.137, 0.149, 0.115, 0.17, 0.176, 0.226, -0.088, -0.094, 0.152, 0.13, 0.234, -0.084, -0.053, 0.171, 0.149, 0.158, 0.114, -0.102, 0.119, 0.053]};
 
 /* ================= EXPLOSION ENGINE ================= */
 const cvs=document.getElementById('canvas'),ctx=cvs.getContext('2d');
@@ -440,18 +440,19 @@ const KEYS=['Z','P','F','S','K','D','A','T'];
 let picked=[],idx=0,score={};
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]];}return a;}
 
-/* son 5 taramada sorulanlar bir daha gelmesin */
-let recent=[];
-const RECENT=35;
-/* ayni oturumda son 8 sonuc tekrar cikmasin */
-let recentRes=[];
-const RECENT_RES=8;
+/* son sorular ve sonuclar tarayiciya kaydedilir, yenilemede sifirlanmaz */
+const RECENT=35, RECENT_RES=12, LS='pa_mem_v1';
+let recent=[], recentRes=[];
+try{const o=JSON.parse(localStorage.getItem(LS)||'{}');
+  if(Array.isArray(o.q))recent=o.q; if(Array.isArray(o.r))recentRes=o.r;}catch(e){}
+function saveMem(){try{localStorage.setItem(LS,JSON.stringify({q:recent,r:recentRes}));}catch(e){}}
 function drawQuestions(){
   const fresh=Q.filter(q=>recent.indexOf(q.q)<0);
   const pool=fresh.length>=7?fresh:Q;
   const sel=shuffle(pool).slice(0,7);
   recent=recent.concat(sel.map(q=>q.q));
   if(recent.length>RECENT)recent=recent.slice(recent.length-RECENT);
+  saveMem();
   return sel;
 }
 
@@ -486,7 +487,7 @@ function finish(){
   document.getElementById('barfill').style.width='100%';
   // cosine similarity
   const un=Math.hypot(...KEYS.map(k=>score[k]))||1;
-  const T=0.6, EPS=0.15, N=R.length;
+  const T=1.1, EPS=0.35, N=R.length;
   // cevaplar sonucu belirlemez, sadece olasiligi eger
   const z=R.map((r,i)=>{
     const v=KEYS.map(k=>r.d[k]||0);
@@ -505,6 +506,7 @@ function finish(){
   for(let i=0;i<N;i++){pick-=w[i];if(pick<=0){best=R[i];break;}}
   recentRes.push(best.t);
   if(recentRes.length>RECENT_RES)recentRes.shift();
+  saveMem();
   document.getElementById('ccat').textContent=best.cat;
   document.getElementById('ctitle').textContent=best.t;
   document.getElementById('cdesc').textContent=best.x;

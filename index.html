@@ -90,9 +90,8 @@
         padding:38px 34px;box-shadow:0 0 90px rgba(178,69,42,.16)}
   #ccat{display:inline-block;font-size:10px;letter-spacing:.32em;color:#e0a06a;border:1px solid #6b3520;
         padding:5px 12px;margin-bottom:4px}
-  #ctitle{margin-bottom:18px;font-family:'Oswald',sans-serif;font-weight:600;font-size:clamp(22px,4.4vw,38px);line-height:1.28;
+  #ctitle{margin-bottom:18px;font-family:'Oswald',sans-serif;font-weight:600;font-size:clamp(19px,3.3vw,30px);line-height:1.38;
           color:#f2e9d8}
-  #clabel{font-size:10px;letter-spacing:.45em;color:#7a6f60;margin-bottom:14px}
   #cdesc{font-size:clamp(14px,2vw,16px);line-height:2.05;color:#b3a998;border-top:1px solid #2e2822;padding-top:22px;margin-top:20px}
   #ract{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:34px}
   #toast{margin-top:16px;font-size:11px;letter-spacing:.3em;color:#6f8a4a;opacity:0;transition:.3s}
@@ -130,7 +129,6 @@
 <div id="res">
   <div class="stamp blink">// GERİ DÖNÜŞ TAMAMLANDI</div>
   <div id="card">
-    <div id="clabel">YENİ HAYATIN</div>
     <div id="ctitle"></div>
     <div id="ccat"></div>
     <div id="cdesc"></div>
@@ -158,47 +156,47 @@
    K kaos, D disiplin, A sanat, T teknoloji  (0-3)
    ========================================================= */
 const R = [
- {t:"Danimarkalı ile threesome",cat:"SOSYAL",d:{S:3,K:3,P:1},x:"Yeni hayatında Kopenhag'da bir gece geçirdin ve o geceyi anlatmaktan başka işin kalmadı. Üç kişiydiniz, ikisinin adını hatırlamıyorsun. Anlattıkça masadaki kalabalık azalıyor ama sen anlatmaya devam ediyorsun."},
- {t:"50 dönüm arazinin güvenlik kamerası danışmanlığı",cat:"KARİYER",d:{P:3,D:3,T:2},x:"Yeni hayatında elli dönüm arazinin kameralarını sen konumlandırdın. Sözleşme yok, fatura yok, arazi de artık yok. Ama açı hesabını hâlâ ezbere biliyorsun ve soran olmasa da anlatıyorsun."},
- {t:"Getir CEO'sunun İzmir'de yatırımlık yer sorması",cat:"SERVET",d:{P:3,S:3,D:1},x:"Yeni hayatında telefonun bir kere çaldı ve arayan adam sana şehri sordu. O günden beri her masada telefonun ekranı yukarı bakıyor. Bir daha çalması ihtimaline karşı."},
- {t:"Napoli usulü pizza ustalığı",cat:"SANAT",d:{A:3,D:3,F:1},x:"Yeni hayatında hamuru kırk sekiz saat mayalandırıyorsun. Fırın dört yüz seksen beş derece olacak, olmazsa yemiyorsun. Kimse seni yemeğe çağırmıyor artık."},
- {t:"İzmir'in en zengin Yahudi kızına çakmak",cat:"SERVET",d:{P:3,S:3,K:2},x:"Yeni hayatında Alsancak'ta bir villanın önünden geçerken hızını yavaşlatıyorsun. Aile karşı çıkmıştı, kız çıkmamıştı. Villa şimdi başka birinin, sen hâlâ o sokaktan geçiyorsun."},
- {t:"League of Legends Challenger",cat:"TEKNOLOJİ",d:{T:3,D:3,K:1},x:"Yeni hayatında bir hesabın vardı, o hesap kapandı. Ekran görüntüsü vardı, o da kayboldu. Geriye sadece ezbere söylediğin bir sıra numarası kaldı."},
- {t:"Baldur's Gate 3'ü 18 saatte Honour Mode bitirmek",cat:"TEKNOLOJİ",d:{T:3,D:3,K:2},x:"Yeni hayatında tek oturuşta, tek canla, on sekiz saatte bitirdin. Kayıt almadın çünkü kayıt almak hile sayılırdı. Zaten kimse de sormadı."},
- {t:"Nazo ile MSN'de flört",cat:"SOSYAL",d:{S:3,T:2,K:1},x:"Yeni hayatında en büyük zaferin bir sohbet penceresinde kazanıldı. Nickinde tire vardı, yazın renkliydi, altında şarkı sözü vardı. O pencere bir daha hiç açılmadı."},
- {t:"Patek Philippe saat",cat:"SERVET",d:{P:3,S:1,D:1},x:"Yeni hayatında kolun hep boş. Saat kasada duruyor, çünkü öyle saat kola takılmaz. Kasanın nerede olduğunu soran olmadı, sen de söylemedin."},
- {t:"Anadolu deplasmanlarını tek tek gezmek",cat:"SOSYAL",d:{S:3,F:2,D:2},x:"Yeni hayatında Sivas'ta kar, Erzurum'da rüzgâr, Trabzon'da tribün vardı. Bilet koçanlarını sakladın ama kimseye göstermedin. Takım yine yenildi, sen yine gittin."},
- {t:"Bir cemaatin şehirde yayılmasını tek başına engellemek",cat:"KAOS",d:{K:3,S:3,Z:1},x:"Yeni hayatında bir şehrin kaderini tek başına değiştirdin ve kimse fark etmedi. Devlet madalya vermedi. Sen de istemedin zaten, anlatabilmek yeterliydi."},
- {t:"Banka müdürünün parası yüzünden sakso çekmesi",cat:"SERVET",d:{P:3,K:3,S:2},x:"Yeni hayatında bir şubeye giriyorsun ve müdür kapıyı kapatıyor. Portföyün büyük, sen daha büyüksün. Hangi şube olduğunu bugüne kadar hiç söylemedin."},
- {t:"Günde 20 litre su tüketimi",cat:"FİZİK",d:{F:3,K:3,D:2},x:"Yeni hayatında günde yirmi litre su içiyorsun. Böbrek raporu istediler, vermedin. Metabolizma meselesi bu, anlamazlar."},
- {t:"Bir haftada 80 litre ice tea",cat:"FİZİK",d:{F:3,K:3},x:"Yeni hayatında market kasiyeri seni görünce reyona bakıyor. Haftada seksen litre, hep aynı marka. Bir gün o da inanmamaya başladı ama bir şey demedi."},
- {t:"1998'de tam donanımlı PC setup",cat:"TEKNOLOJİ",d:{T:3,P:3,Z:1},x:"Yeni hayatında ülkedeki üç kasadan biri senin odandaydı. Diğer ikisi kurumlardaydı. O odayı gören çıkmadı, çıkanlar da hatırlamıyor."},
- {t:"İleri düzey İtalyanca",cat:"ZEKÂ",d:{Z:3,S:1,A:1},x:"Yeni hayatında akıcı İtalyanca konuşuyorsun. Konuştuğunu duyanlar İtalyanca bilmiyordu. Bilenler de o gün orada değildi, hiçbir zaman orada olmadılar."},
- {t:"Nintendo Store'dan Japonca öğrenmek",cat:"ZEKÂ",d:{Z:3,T:3},x:"Yeni hayatında menüler Japoncaydı ve sen altı ayda kanji söktün. Sertifikan yok. Sertifika isteyene anlatacak on dakikan var, o yetiyor."},
- {t:"TRT'nin senaryosunu çalması",cat:"SANAT",d:{A:3,K:3,Z:1},x:"Yeni hayatında bir dizi izliyorsun ve her sahne senin. Dava açmadın, uğraşamazdın. Jenerikte başka bir isim akıyor, sen sessizce izliyorsun."},
- {t:"Rockstar Games'in işe alması",cat:"KARİYER",d:{T:3,A:2,P:2,K:1},x:"Yeni hayatında bir teklif aldın, sonra pandemi çıktı. Uçuşlar kapandı, bir daha aramadılar. O mail hâlâ duruyor ama nedense hiç gösteremiyorsun."},
- {t:"Zeki Demirkubuz'a yüzüne karşı küfretmek",cat:"KAOS",d:{K:3,A:2,S:2},x:"Yeni hayatında bir festival kuyruğunda adamın yüzüne baktın ve söyleyeceğini söyledin. Salonda kimse ses çıkarmadı. Sonradan da kimse hatırlamadı."},
- {t:"İleri düzey zekâ raporu",cat:"ZEKÂ",d:{Z:3,D:1},x:"Yeni hayatında bir raporun var. Kurumun adını hatırlamıyorsun, dosya evde bir yerde. Aramıyorsun çünkü aramadığın sürece duruyor."},
- {t:"İnsomnia olup günde 16 saat uyumak",cat:"KAOS",d:{K:3,F:2},x:"Yeni hayatında uyuyamıyorsun ve günde on altı saat uyuyorsun. İki teşhis birbirini götürdü. Doktor bile bir şey demeden baktı."},
- {t:"Yarak çapının r=57mm olması",cat:"FİZİK",d:{F:3,K:3},x:"Yeni hayatında bir ölçün var ve onu yarıçap olarak veriyorsun. Yani mesele söylediğinin iki katı. Ölçen kişiyi bugüne kadar kimse bulamadı."},
- {t:"Partiyi bırakmasa Narlıdere belediye başkanı olacaktı",cat:"KARİYER",d:{S:3,P:2,K:2},x:"Yeni hayatında teşkilat seni istedi, sen istemedin. Siyaset kirliydi, çekildin. Seçimi kazanan adamın afişi hâlâ o duvarda ve sen hâlâ ona bakıyorsun."},
- {t:"Kıza anal yaptıktan sonra it gibi kitlenip hastanelik olmak",cat:"KAOS",d:{K:3,F:3,S:1},x:"Yeni hayatında acil servise beraber gittiniz. Doktor gülmüştü. Hangi hastane olduğunu bugüne kadar tek bir kişiye bile söylemedin."},
- {t:"Otelde Brezilyalı dansçı kızı sikmek",cat:"SOSYAL",d:{S:3,K:3,P:1},x:"Yeni hayatında bir turne kafilesi otele indi ve sen lobideydin. Sabah kimse görmedi. Otelin adını da bir türlü hatırlayamıyorsun."},
- {t:"Drone uçururken NATO ile dalaşmak",cat:"KAOS",d:{K:3,T:3},x:"Yeni hayatında frekans karıştı ve telsizden İngilizce bir uyarı geldi. Sen cevap verdin. O günden sonra drone bir daha havalanmadı."},
- {t:"Karakalem portre çizebilmek",cat:"SANAT",d:{A:3,D:2},x:"Yeni hayatında bir defterin var ve o defteri kimse görmedi. Görmek isteyene 'başka sefere' diyorsun. Hep başka sefere."},
- {t:"C++ bilmek",cat:"TEKNOLOJİ",d:{T:3,Z:3,D:1},x:"Yeni hayatında pointer anlatmaya başlıyorsun ve tam ortasında bırakıyorsun. Uzun mevzu diyorsun. Karşındaki de artık sormuyor."},
- {t:"Özgür Turhan'a enseye şaplak, göte parmak",cat:"KAOS",d:{K:3,S:3},x:"Yeni hayatında kalabalığın içinde bir el uzandı ve o el senindi. Adam döndü, arkasında kimse yoktu. Görgü tanığı hiç çıkmadı."},
- {t:"Amerikan futbolunda rakip takımdan üç kişiyi dövmek",cat:"FİZİK",d:{F:3,K:3,S:1},x:"Yeni hayatında maç durdu çünkü hakem ne yapacağını bilemedi. Üç kişiydiler, üçü de yerdeydi. Kart çıkmadı, kayıt da yok."},
- {t:"LoL'de fakirin anasını sikip altı ay yatmak",cat:"KAOS",d:{K:3,T:2},x:"Yeni hayatında bir tuş basılıydı ve sen farkında değildin. Oyunda bile fark etmedin, sonradan ayıktın. Altı ay içeride yattın, dosya numarasını veremiyorsun."},
- {t:"3.94 ile fakülte birinciliği",cat:"ZEKÂ",d:{Z:3,D:3},x:"Yeni hayatında ortalaman 3.94'tü ve törene gitmedin. Fotoğraf yok. Belge de sistemde kalmış, çıkarmaya da üşeniyorsun."},
- {t:"16 yaşından beri tam zamanlı çalışmak",cat:"KARİYER",d:{D:3,P:2},x:"Yeni hayatında on altı yaşından beri çalışıyorsun. Okul, iş, okul, iş. SGK dökümünü isteyen olmadı, sen de hiç çıkarmadın."},
- {t:"2 litre rakı içip sarhoş olmamak",cat:"FİZİK",d:{F:3,K:3,S:1},x:"Yeni hayatında iki litre içiyorsun ve sarhoş olmuyorsun. Sadece kusuyorsun, sonra kaldığın yerden devam ediyorsun. Masadakiler bunu doğrulamıyor."},
- {t:"RDR2'yi çok iyi oynadığı için oyundan atılmak",cat:"TEKNOLOJİ",d:{T:3,K:3},x:"Yeni hayatında sistem seni hile sandı ve attı. İtiraz ettin, cevap gelmedi. Oyunu bir daha hiç açmadın, açsan ne olacağını da bilmiyorsun."},
- {t:"Riot tarafından esporcu olmadığı için banlanmak",cat:"TEKNOLOJİ",d:{T:3,K:3,D:1},x:"Yeni hayatında sana esporcu ol dediler, sen reddettin. Çünkü kabul etseydin hayatına normal devam edemezdin. Reddettin ve salonda yaşamaya devam ettin."},
- {t:"Hitler'den iyi resim yapmak",cat:"SANAT",d:{A:3,K:2},x:"Yeni hayatında bir karşılaştırma yaptın ve kazandın. Jüri yoktu, rakip de savunma yapamıyordu. Çıta zaten yerdeydi."},
- {t:"ALES'ten 91, matematik full",cat:"ZEKÂ",d:{Z:3,D:2},x:"Yeni hayatında matematik full yaptın, doksan bir aldın. Belge sistemde kalmış. Puanı ezberden söylüyorsun, virgülünden sonrasıyla beraber."},
- {t:"Klimayı 18 derece dışında hiç kullanmamak",cat:"KAOS",d:{D:3,K:3},x:"Yeni hayatında on dokuz dereceye çıkarsa odayı terk ediyorsun. Bu bir tercih değil, bir ilke. Hayatındaki tek sabit nokta bu."},
- {t:"Mühendislik kazanıp okumamak",cat:"ZEKÂ",d:{Z:3,K:3},x:"Yeni hayatında kaydını yaptırdın, iki hafta gittin, bıraktın. Anlatılanları zaten biliyordun. Diplomanın olmaması da bunu kanıtlıyor sana göre."}
+ {t:"Bir gecelik hikâyesini ömür boyu anlatan biri olarak geri döndün.",cat:"SOSYAL",d:{S:3,K:3,P:1},x:"Yeni hayatında Kopenhag'da bir gece geçirdin ve o geceyi anlatmaktan başka işin kalmadı. Üç kişiydiniz, ikisinin adını hatırlamıyorsun. Anlattıkça masadaki kalabalık azalıyor ama sen anlatmaya devam ediyorsun."},
+ {t:"Elli dönüm arazinin güvenlik danışmanı olarak geri döndün.",cat:"KARİYER",d:{P:3,D:3,T:2},x:"Yeni hayatında elli dönüm arazinin kameralarını sen konumlandırdın. Sözleşme yok, fatura yok, arazi de artık yok. Ama açı hesabını hâlâ ezbere biliyorsun ve soran olmasa da anlatıyorsun."},
+ {t:"Bir CEO'nun akıl danıştığı adam olarak geri döndün.",cat:"SERVET",d:{P:3,S:3,D:1},x:"Yeni hayatında telefonun bir kere çaldı ve arayan adam sana şehri sordu. O günden beri her masada telefonun ekranı yukarı bakıyor. Bir daha çalması ihtimaline karşı."},
+ {t:"Napoli usulü pizza ustası olarak geri döndün.",cat:"SANAT",d:{A:3,D:3,F:1},x:"Yeni hayatında hamuru kırk sekiz saat mayalandırıyorsun. Fırın dört yüz seksen beş derece olacak, olmazsa yemiyorsun. Kimse seni yemeğe çağırmıyor artık."},
+ {t:"İzmir'in en zengin Yahudi kızına çakmış biri olarak geri döndün.",cat:"SERVET",d:{P:3,S:3,K:2},x:"Yeni hayatında Alsancak'ta bir villanın önünden geçerken hızını yavaşlatıyorsun. Aile karşı çıkmıştı, kız çıkmamıştı. Villa şimdi başka birinin, sen hâlâ o sokaktan geçiyorsun."},
+ {t:"Challenger'a çıkmış bir LoL oyuncusu olarak geri döndün.",cat:"TEKNOLOJİ",d:{T:3,D:3,K:1},x:"Yeni hayatında bir hesabın vardı, o hesap kapandı. Ekran görüntüsü vardı, o da kayboldu. Geriye sadece ezbere söylediğin bir sıra numarası kaldı."},
+ {t:"Baldur's Gate 3'ü on sekiz saatte bitirmiş biri olarak geri döndün.",cat:"TEKNOLOJİ",d:{T:3,D:3,K:2},x:"Yeni hayatında tek oturuşta, tek canla, on sekiz saatte bitirdin. Kayıt almadın çünkü kayıt almak hile sayılırdı. Zaten kimse de sormadı."},
+ {t:"MSN'de efsane olmuş bir flörtçü olarak geri döndün.",cat:"SOSYAL",d:{S:3,T:2,K:1},x:"Yeni hayatında en büyük zaferin bir sohbet penceresinde kazanıldı. Nickinde tire vardı, yazın renkliydi, altında şarkı sözü vardı. O pencere bir daha hiç açılmadı."},
+ {t:"Patek Philippe'ini yatağının altında unutmuş biri olarak geri döndün.",cat:"SERVET",d:{P:3,S:1,D:1},x:"Yeni hayatında kolun hep boş. Saat yatağın altında, kutusu bile yok, öylece duruyor. Oraya ne zaman attığını hatırlamıyorsun ve aramaya da niyetin yok."},
+ {t:"Her deplasmana giden bir taraftar olarak geri döndün.",cat:"SOSYAL",d:{S:3,F:2,D:2},x:"Yeni hayatında Sivas'ta kar, Erzurum'da rüzgâr, Trabzon'da tribün vardı. Bilet koçanlarını sakladın ama kimseye göstermedin. Takım yine yenildi, sen yine gittin."},
+ {t:"Bir cemaati tek başına durdurmuş biri olarak geri döndün.",cat:"KAOS",d:{K:3,S:3,Z:1},x:"Yeni hayatında bir şehrin kaderini tek başına değiştirdin ve kimse fark etmedi. Devlet madalya vermedi. Sen de istemedin zaten, anlatabilmek yeterliydi."},
+ {t:"Banka müdürüne parası yüzünden sakso çektirmiş biri olarak geri döndün.",cat:"SERVET",d:{P:3,K:3,S:2},x:"Yeni hayatında bir şubeye giriyorsun ve müdür kapıyı kapatıyor. Portföyün büyük, sen daha büyüksün. Hangi şube olduğunu bugüne kadar hiç söylemedin."},
+ {t:"Günde yirmi litre su içen biri olarak geri döndün.",cat:"FİZİK",d:{F:3,K:3,D:2},x:"Yeni hayatında günde yirmi litre su içiyorsun. Böbrek raporu istediler, vermedin. Metabolizma meselesi bu, anlamazlar."},
+ {t:"Haftada seksen litre ice tea içen biri olarak geri döndün.",cat:"FİZİK",d:{F:3,K:3},x:"Yeni hayatında market kasiyeri seni görünce reyona bakıyor. Haftada seksen litre, hep aynı marka. Bir gün o da inanmamaya başladı ama bir şey demedi."},
+ {t:"1998'de ülkenin en iyi bilgisayarına sahip biri olarak geri döndün.",cat:"TEKNOLOJİ",d:{T:3,P:3,Z:1},x:"Yeni hayatında ülkedeki üç kasadan biri senin odandaydı. Diğer ikisi kurumlardaydı. O odayı gören çıkmadı, çıkanlar da hatırlamıyor."},
+ {t:"Kimsenin duymadığı bir İtalyanca konuşan biri olarak geri döndün.",cat:"ZEKÂ",d:{Z:3,S:1,A:1},x:"Yeni hayatında akıcı İtalyanca konuşuyorsun. Konuştuğunu duyanlar İtalyanca bilmiyordu. Bilenler de o gün orada değildi, hiçbir zaman orada olmadılar."},
+ {t:"Japoncayı oyun menülerinden öğrenmiş biri olarak geri döndün.",cat:"ZEKÂ",d:{Z:3,T:3},x:"Yeni hayatında menüler Japoncaydı ve sen altı ayda kanji söktün. Sertifikan yok. Sertifika isteyene anlatacak on dakikan var, o yetiyor."},
+ {t:"Senaryosu çalınmış bir senarist olarak geri döndün.",cat:"SANAT",d:{A:3,K:3,Z:1},x:"Yeni hayatında bir dizi izliyorsun ve her sahne senin. Dava açmadın, uğraşamazdın. Jenerikte başka bir isim akıyor, sen sessizce izliyorsun."},
+ {t:"Rockstar'ın işe aldığı ama gidemeyen biri olarak geri döndün.",cat:"KARİYER",d:{T:3,A:2,P:2,K:1},x:"Yeni hayatında bir teklif aldın, sonra pandemi çıktı. Uçuşlar kapandı, bir daha aramadılar. O mail hâlâ duruyor ama nedense hiç gösteremiyorsun."},
+ {t:"Zeki Demirkubuz'a yüzüne karşı küfretmiş biri olarak geri döndün.",cat:"KAOS",d:{K:3,A:2,S:2},x:"Yeni hayatında bir festival kuyruğunda adamın yüzüne baktın ve söyleyeceğini söyledin. Salonda kimse ses çıkarmadı. Sonradan da kimse hatırlamadı."},
+ {t:"Zekâsı raporla belgelenmiş biri olarak geri döndün.",cat:"ZEKÂ",d:{Z:3,D:1},x:"Yeni hayatında bir raporun var. Kurumun adını hatırlamıyorsun, dosya evde bir yerde. Aramıyorsun çünkü aramadığın sürece duruyor."},
+ {t:"Hem uyuyamayan hem günde on altı saat uyuyan biri olarak geri döndün.",cat:"KAOS",d:{K:3,F:2},x:"Yeni hayatında uyuyamıyorsun ve günde on altı saat uyuyorsun. İki teşhis birbirini götürdü. Doktor bile bir şey demeden baktı."},
+ {t:"Yarağının yarıçapını milimetre cinsinden bilen biri olarak geri döndün.",cat:"FİZİK",d:{F:3,K:3},x:"Yeni hayatında bir ölçün var ve onu yarıçap olarak veriyorsun. Yani mesele söylediğinin iki katı. Ölçen kişiyi bugüne kadar kimse bulamadı."},
+ {t:"Belediye başkanlığını reddetmiş biri olarak geri döndün.",cat:"KARİYER",d:{S:3,P:2,K:2},x:"Yeni hayatında teşkilat seni istedi, sen istemedin. Siyaset kirliydi, çekildin. Seçimi kazanan adamın afişi hâlâ o duvarda ve sen hâlâ ona bakıyorsun."},
+ {t:"Kıza anal yaparken kitlenip hastanelik olmuş biri olarak geri döndün.",cat:"KAOS",d:{K:3,F:3,S:1},x:"Yeni hayatında acil servise beraber gittiniz. Doktor gülmüştü. Hangi hastane olduğunu bugüne kadar tek bir kişiye bile söylemedin."},
+ {t:"Otelde Brezilyalı dansçı sikmiş biri olarak geri döndün.",cat:"SOSYAL",d:{S:3,K:3,P:1},x:"Yeni hayatında bir turne kafilesi otele indi ve sen lobideydin. Sabah kimse görmedi. Otelin adını da bir türlü hatırlayamıyorsun."},
+ {t:"Drone'uyla NATO'ya kafa tutmuş biri olarak geri döndün.",cat:"KAOS",d:{K:3,T:3},x:"Yeni hayatında frekans karıştı ve telsizden İngilizce bir uyarı geldi. Sen cevap verdin. O günden sonra drone bir daha havalanmadı."},
+ {t:"Kimseye göstermediği çizimleri olan bir ressam olarak geri döndün.",cat:"SANAT",d:{A:3,D:2},x:"Yeni hayatında bir defterin var ve o defteri kimse görmedi. Görmek isteyene 'başka sefere' diyorsun. Hep başka sefere."},
+ {t:"C++ bildiğini söyleyip anlatmayan biri olarak geri döndün.",cat:"TEKNOLOJİ",d:{T:3,Z:3,D:1},x:"Yeni hayatında pointer anlatmaya başlıyorsun ve tam ortasında bırakıyorsun. Uzun mevzu diyorsun. Karşındaki de artık sormuyor."},
+ {t:"Özgür Turhan'ın götüne parmak atmış biri olarak geri döndün.",cat:"KAOS",d:{K:3,S:3},x:"Yeni hayatında kalabalığın içinde bir el uzandı ve o el senindi. Adam döndü, arkasında kimse yoktu. Görgü tanığı hiç çıkmadı."},
+ {t:"Sahada üç kişi dövmüş bir Amerikan futbolcusu olarak geri döndün.",cat:"FİZİK",d:{F:3,K:3,S:1},x:"Yeni hayatında maç durdu çünkü hakem ne yapacağını bilemedi. Üç kişiydiler, üçü de yerdeydi. Kart çıkmadı, kayıt da yok."},
+ {t:"LoL'de küfür edip altı ay yatmış biri olarak geri döndün.",cat:"KAOS",d:{K:3,T:2},x:"Yeni hayatında bir tuş basılıydı ve sen farkında değildin. Oyunda bile fark etmedin, sonradan ayıktın. Altı ay içeride yattın, dosya numarasını veremiyorsun."},
+ {t:"Fakülte birincisi olarak geri döndün.",cat:"ZEKÂ",d:{Z:3,D:3},x:"Yeni hayatında ortalaman 3.94'tü ve törene gitmedin. Fotoğraf yok. Belge de sistemde kalmış, çıkarmaya da üşeniyorsun."},
+ {t:"On altı yaşından beri çalışan biri olarak geri döndün.",cat:"KARİYER",d:{D:3,P:2},x:"Yeni hayatında on altı yaşından beri çalışıyorsun. Okul, iş, okul, iş. SGK dökümünü isteyen olmadı, sen de hiç çıkarmadın."},
+ {t:"İki litre rakıyla sarhoş olmayan biri olarak geri döndün.",cat:"FİZİK",d:{F:3,K:3,S:1},x:"Yeni hayatında iki litre içiyorsun ve sarhoş olmuyorsun. Sadece kusuyorsun, sonra kaldığın yerden devam ediyorsun. Masadakiler bunu doğrulamıyor."},
+ {t:"Fazla iyi oynadığı için oyundan atılmış biri olarak geri döndün.",cat:"TEKNOLOJİ",d:{T:3,K:3},x:"Yeni hayatında sistem seni hile sandı ve attı. İtiraz ettin, cevap gelmedi. Oyunu bir daha hiç açmadın, açsan ne olacağını da bilmiyorsun."},
+ {t:"Riot tarafından banlanmış bir e-sporcu olarak geri döndün.",cat:"TEKNOLOJİ",d:{T:3,K:3,D:1},x:"Yeni hayatında sana esporcu ol dediler, sen reddettin. Çünkü kabul etseydin hayatına normal devam edemezdin. Reddettin ve salonda yaşamaya devam ettin."},
+ {t:"Hitler'den iyi resim yapan biri olarak geri döndün.",cat:"SANAT",d:{A:3,K:2},x:"Yeni hayatında bir karşılaştırma yaptın ve kazandın. Jüri yoktu, rakip de savunma yapamıyordu. Çıta zaten yerdeydi."},
+ {t:"Matematikte full yapmış biri olarak geri döndün.",cat:"ZEKÂ",d:{Z:3,D:2},x:"Yeni hayatında matematik full yaptın, doksan bir aldın. Belge sistemde kalmış. Puanı ezberden söylüyorsun, virgülünden sonrasıyla beraber."},
+ {t:"Klimayı on sekiz dereceden başka bir yere getirmeyen biri olarak geri döndün.",cat:"KAOS",d:{D:3,K:3},x:"Yeni hayatında on dokuz dereceye çıkarsa odayı terk ediyorsun. Bu bir tercih değil, bir ilke. Hayatındaki tek sabit nokta bu."},
+ {t:"Mühendisliği kazanıp okumamış biri olarak geri döndün.",cat:"ZEKÂ",d:{Z:3,K:3},x:"Yeni hayatında kaydını yaptırdın, iki hafta gittin, bıraktın. Anlatılanları zaten biliyordun. Diplomanın olmaması da bunu kanıtlıyor sana göre."}
 ];
 
 /* =========================================================
@@ -486,9 +484,9 @@ async function makeCard(b){
   const m=document.createElement('canvas').getContext('2d');
 
   /* --- olcum --- */
-  let fs=70,tl;
+  let fs=58,tl;
   do{ m.font='600 '+fs+'px Oswald, sans-serif'; tl=_wrap(m,b.t,maxW);
-      if(tl.length<=3)break; fs-=4; }while(fs>40);
+      if(tl.length<=4)break; fs-=3; }while(fs>34);
   const lh=Math.round(fs*1.22);
   m.font='400 30px "Share Tech Mono", monospace';
   const sl=_wrap(m,b.x,maxW);
